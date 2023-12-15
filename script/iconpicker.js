@@ -22,7 +22,7 @@
 		});
 	});
 
-	$(document).on("click", ".cq-dialog-submit, .dialogue-remove", function (event) {
+	$(document).on("click", ".cq-dialog-submit", function (event) {
 		$('.informa-icon-picker').remove();
 		$('.iconpicker-backfill').remove();
 	})
