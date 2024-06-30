@@ -40,20 +40,20 @@
             stopIndex = icons.length - 1,
             middle = Math.floor((stopIndex + startIndex) / 2);
 
-        while (icons[middle].name != search && startIndex < stopIndex) {
+           while (icons[middle].name != search && startIndex < stopIndex) {
 
             if (search < icons[middle].name) {
-                stopIndex = middle - 1;
-            } else if (search > icons[middle].name) {
-                startIndex = middle + 1;
-            }
-
-            middle = Math.floor((stopIndex + startIndex) / 2);
+            stopIndex = middle - 1;
+        } else if (search > icons[middle].name) {
+            startIndex = middle + 1;
         }
 
-
-        return (icons[middle].name != search) ? -1 : middle;
+        middle = Math.floor((stopIndex + startIndex) / 2);
     }
+
+
+    return (icons[middle].name != search) ? -1 : middle;
+}
 
     var bindField = function ($field, $popover, icons) {
 
@@ -157,11 +157,11 @@
             $input.after($activator);
         }
         $activator.on('click', function () {
-            $('body').append($popover);
-            $popover.css('left', $input.offset().left);
-            $popover.css('display', 'flex');
-            $popover.css('top', $input.offset().top + $input.outerHeight(true));
-            $search.val('');
+$('body').append($popover);
+$popover.css('left', $input.offset().left);
+$popover.css('display', 'flex');
+$popover.css('top', $input.offset().top + $input.outerHeight(true));
+$search.val('');
         });
     }
 }(jQuery, document));

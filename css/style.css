@@ -9,9 +9,9 @@
 .picker-icons-container {
     height: 300px;
     display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    overflow: auto;
+gap: 5px;
+flex-wrap: wrap;
+overflow: auto;
 
 }
 .picker-icon {
