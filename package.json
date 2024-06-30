@@ -1,0 +1,24 @@
+{
+	"name": "cleanup-repo",
+	"version": "1.0.0",
+	"description": "Simple tools for clean repo",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint:script": "eslint",
+		"lint:style": "stylelint **/*.{css,scss}",
+		"prepare": "husky"
+	},
+	"author": "G@urav M@ll",
+	"license": "ISC",
+	"devDependencies": {
+		"@eslint/js": "^9.6.0",
+		"eslint": "^9.6.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.7",
+		"prettier": "3.3.2",
+		"stylelint": "^16.6.1",
+		"stylelint-config-standard": "^36.0.1",
+		"stylelint-config-standard-scss": "^13.1.0"
+	}
+}
