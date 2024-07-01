@@ -1,48 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<title>Multi IconPicker Implementation</title>
+		<script type="text/javascript" src="./script/jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
 
-<head>
-    <title>Multi IconPicker Implementation</title>
-    <script type="text/javascript" src="./script/jquery-2.2.4.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-
-<body>
-    <div id="activate-cta">
-        <button class="dialogue-loaded">Load</button>
-    </div>
-    <div id="main">
-        <div class="coral-Form-fieldwrapper"><label id="label1_397246db-0c24-4ef6-8819-4d223825fe9a"
-                class="coral-Form-fieldlabel" for="coral-id-37">Icon</label>
-            <input class="coral-Form-field coral-Form-field--icon coral3-Textfield" type="text" name="./icon"
-                labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
-                data-foundation-validation="" data-validation="" is="coral-textfield" id="coral1-id-37"
-                aria-labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
-                aria-invalid="false">
-            <div class="icon-picker coral-Popover informa-icon-picker"></div>
-            <span class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
-                id="description1_397246db-0c24-4ef6-8819-4d223825fe9a" tabindex="0" data-init="quicktip"
-                data-quicktip-type="info" data-quicktip-arrow="right"
-                data-quicktip-content="Icon identifier for displaying an icon in the button."
-                aria-label="Icon identifier for displaying an icon in the button."></span>
-        </div>
-        <div class="coral-Form-fieldwrapper"><label id="label1_397246db-0c24-4ef6-8819-4d223825fe9a"
-            class="coral-Form-fieldlabel" for="coral-id-37">Icon</label>
-        <input class="coral-Form-field coral-Form-field--icon coral3-Textfield" type="text" name="./icon"
-            labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
-            data-foundation-validation="" data-validation="" is="coral-textfield" id="coral1-id-37"
-            aria-labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
-            aria-invalid="false">
-        <div class="icon-picker coral-Popover informa-icon-picker"></div>
-        <span class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
-            id="description1_397246db-0c24-4ef6-8819-4d223825fe9a" tabindex="0" data-init="quicktip"
-            data-quicktip-type="info" data-quicktip-arrow="right"
-            data-quicktip-content="Icon identifier for displaying an icon in the button."
-            aria-label="Icon identifier for displaying an icon in the button."></span>
-    </div>
-    </div>
-    <script type="text/javascript" src="./script/iconpicker-old.js"></script>
-</body>
-
-
+	<body>
+		<div id="activate-cta">
+			<button class="dialogue-loaded">Load</button>
+		</div>
+		<div id="main">
+			<div class="coral-Form-fieldwrapper">
+				<label
+					id="label1_397246db-0c24-4ef6-8819-4d223825fe9a"
+					class="coral-Form-fieldlabel"
+					for="coral-id-37"
+					>Icon</label
+				>
+				<input
+					class="coral-Form-field coral-Form-field--icon coral3-Textfield"
+					type="text"
+					name="./icon"
+					labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
+					data-foundation-validation=""
+					data-validation=""
+					is="coral-textfield"
+					id="coral1-id-37"
+					aria-labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
+					aria-invalid="false"
+				/>
+				<div class="icon-picker coral-Popover informa-icon-picker"></div>
+				<span
+					class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+					id="description1_397246db-0c24-4ef6-8819-4d223825fe9a"
+					tabindex="0"
+					data-init="quicktip"
+					data-quicktip-type="info"
+					data-quicktip-arrow="right"
+					data-quicktip-content="Icon identifier for displaying an icon in the button."
+					aria-label="Icon identifier for displaying an icon in the button."
+				></span>
+			</div>
+			<div class="coral-Form-fieldwrapper">
+				<label
+					id="label1_397246db-0c24-4ef6-8819-4d223825fe9a"
+					class="coral-Form-fieldlabel"
+					for="coral-id-37"
+					>Icon</label
+				>
+				<input
+					class="coral-Form-field coral-Form-field--icon coral3-Textfield"
+					type="text"
+					name="./icon"
+					labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
+					data-foundation-validation=""
+					data-validation=""
+					is="coral-textfield"
+					id="coral1-id-37"
+					aria-labelledby="label_397246db-0c24-4ef6-8819-4d223825fe9a description_397246db-0c24-4ef6-8819-4d223825fe9a"
+					aria-invalid="false"
+				/>
+				<div class="icon-picker coral-Popover informa-icon-picker"></div>
+				<span
+					class="coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS"
+					id="description1_397246db-0c24-4ef6-8819-4d223825fe9a"
+					tabindex="0"
+					data-init="quicktip"
+					data-quicktip-type="info"
+					data-quicktip-arrow="right"
+					data-quicktip-content="Icon identifier for displaying an icon in the button."
+					aria-label="Icon identifier for displaying an icon in the button."
+				></span>
+			</div>
+		</div>
+		<script type="text/javascript" src="./script/iconpicker-old.js"></script>
+	</body>
 </html>

@@ -17,6 +17,10 @@ export default [
 		},
 	},
 	{
-		ignores: ['.prettierrc.js', '.stylelintrc.js'],
+		ignores: [
+			'.prettierrc.js',
+			'.stylelintrc.js',
+			'script/jquery-2.2.4.min.js',
+		],
 	},
 ];

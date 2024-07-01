@@ -1,6 +1,6 @@
-; (function ($, document, undefined) {
+(function ($, document) {
 	'use strict';
-	$(document).on("click", ".dialogue-loaded", function (event) {
+	$(document).on('click', '.dialogue-loaded', function () {
 		var $dialog = $('#main');
 		var icons = null;
 		$dialog.find('.icon-picker').each(function () {
@@ -8,7 +8,7 @@
 			if (icons == null) {
 				$.get('./icons.json', function (data) {
 					if (data) {
-						if (typeof data === "string") {
+						if (typeof data === 'string') {
 							icons = JSON.parse(data);
 						} else {
 							icons = data;
@@ -22,10 +22,10 @@
 		});
 	});
 
-	$(document).on("click", ".cq-dialog-submit", function (event) {
+	$(document).on('click', '.cq-dialog-submit', function () {
 		$('.informa-icon-picker').remove();
 		$('.iconpicker-backfill').remove();
-	})
+	});
 
 	var binSearch = function (icons, search) {
 		var startIndex = 0,
@@ -33,7 +33,6 @@
 			middle = Math.floor((stopIndex + startIndex) / 2);
 
 		while (icons[middle].name != search && startIndex < stopIndex) {
-
 			if (search < icons[middle].name) {
 				stopIndex = middle - 1;
 			} else if (search > icons[middle].name) {
@@ -43,9 +42,8 @@
 			middle = Math.floor((stopIndex + startIndex) / 2);
 		}
 
-
-		return (icons[middle].name != search) ? -1 : middle;
-	}
+		return icons[middle].name != search ? -1 : middle;
+	};
 
 	var bindField = function ($popover, icons) {
 		const $parent = $popover.parent('.coral-Form-fieldwrapper');
@@ -53,18 +51,20 @@
 
 		var $container = $('<div class="picker-icons-container"></div>');
 		var $header = $('<div class="picker-icons-header"></div>');
-		var $search = $('<input type="text" placeholder="Search" class="picker-icons-search" />');
+		var $search = $(
+			'<input type="text" placeholder="Search" class="picker-icons-search" />',
+		);
 
 		$header.append($search);
 		$popover.append($header);
 		$popover.append($container);
 		$popover.addClass('informa-icon-picker');
 
-		$(document).on("click", ".iconpicker-backfill", function (event) {
+		$(document).on('click', '.iconpicker-backfill', function () {
 			$popover.css('display', 'none');
 			$input.after($popover);
 			$('.iconpicker-backfill').remove();
-		})
+		});
 
 		$popover.on('click', '.picker-icon', function (e) {
 			console.log('icon clicked');
@@ -79,7 +79,7 @@
 			}
 		});
 
-		$search.on('keyup', function (e) {
+		$search.on('keyup', function () {
 			var searchTerm = $search.val();
 			if (!searchTerm || searchTerm === '') {
 				$container.find('.picker-icon').show();
@@ -119,9 +119,11 @@
 		for (var setName of setNames) {
 			var set = icons[setName];
 			set = set.sort(function (a, b) {
-				if (a.name == b.name) { return 0; }
-				return (a.name > b.name) ? 1 : -1;
-			})
+				if (a.name == b.name) {
+					return 0;
+				}
+				return a.name > b.name ? 1 : -1;
+			});
 			set.forEach(function (icon) {
 				var $ico_wrapper = $('<div class="picker-icon"></div>');
 				var $ico_label = $('<span class="picker-icon--label"></span>');
@@ -143,19 +145,20 @@
 				$popover.find('.picker-icons-container').append($ico_wrapper);
 			});
 		}
-		var $activator = $('<button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M" variant="secondary" title="Open Icon Picker" type="button" aria-label="Open Icon Picker"></button>');
+		var $activator = $(
+			'<button is="coral-button" class="coral3-Button coral3-Button--secondary" size="M" variant="secondary" title="Open Icon Picker" type="button" aria-label="Open Icon Picker"></button>',
+		);
 		$activator.html('<span>OPEN</span>');
-		if ($parent.find(">button").find($(".coral3-Icon--filter")).length == 0) {
+		if ($parent.find('>button').find($('.coral3-Icon--filter')).length == 0) {
 			$input.after($activator);
 		}
 		$activator.on('click', function () {
 			$('body').append($popover);
-			$('body').append('<div class="iconpicker-backfill"></div>')
+			$('body').append('<div class="iconpicker-backfill"></div>');
 			$popover.css('left', $input.offset().left);
 			$popover.css('display', 'block');
 			$popover.css('top', $input.offset().top + $input.outerHeight(true));
 			$search.val('');
 		});
-	}
-
-}(jQuery, document));
+	};
+})(jQuery, document);
